@@ -1,4 +1,5 @@
 __author__ = 'air'
+import httplib
 
 people = {
     'shenyubao': {
@@ -22,18 +23,13 @@ labels = {
     'addr': 'address'
 }
 name = raw_input('Name: ')
-
-if request == 'p': key = 'phone'
-if request == 'a': key = 'addr'
+key = raw_input('request: ')
+if key == 'phone': key = 'phone'
+if key == 'addr': key = 'addr'
 
 if name in people : print "%s's %s is %s." % \
-        (name. labels[key].people[name][key])
+        (name,labels[key],people[name][key])
 
-import httplib
 
-conn = httplib.HTTPConnection("www.python.org")
-conn.request("REQUEST","/index.html")
-r1 = conn.getresponse()
-print r1.status,r1.reason
 
-#测试
+
